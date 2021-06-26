@@ -1,0 +1,119 @@
+tags:
+- name: hotels
+  description: hotels api
+
+paths:
+# [GET] hotels
+  /hotels/min-price-by-city:
+    get:
+      tags:
+      - hotels
+      summary: Find hotels with min price by city
+      produces:
+      - "application/json"
+      parameters:
+      - name: "checkinDate0"
+        in: "query"
+        description: "first checkin date (format: YYYY-MM-DD)"
+        required: true
+        type: "string"
+      - name: "checkoutDate0"
+        in: "query"
+        description: "first checkout date (format: YYYY-MM-DD)"
+        required: true
+        type: "string"
+      - name: "checkinDate1"
+        in: "query"
+        description: "second checkin date (format: YYYY-MM-DD)"
+        required: true
+        type: "string"
+      - name: "checkoutDate1"
+        in: "query"
+        description: "second checkout date (format: YYYY-MM-DD)"
+        required: true
+        type: "string"
+      - name: "cities[]"
+        in: "query"
+        description: "cities array"
+        required: true
+        type: "array"     
+        items:
+          type: "string"
+        collectionFormat: multi
+        minItems: 1
+        maxItems: 5
+
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: "#/definitions/hotels"
+        400:
+          description: 'Bad Request'
+        500:
+          description: 'Server Error'
+
+# [GET] cashed
+  /hotels/min-price-by-search-id:
+    get:
+      tags:
+      - hotels
+      summary: get cashed search request
+      produces:
+      - "application/json"
+      parameters:
+      - name: "searchId"
+        in: "query"
+        description: "searchId (format: XXXXXXXXXXXXXXXXXXXXXXXX)"
+        required: true
+        type: "string"
+
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: "#/definitions/hotels"
+        400:
+          description: 'Bad Request'
+        500:
+          description: 'Server Error'
+
+# definitions:
+# response data definition
+definitions:
+  hotels:
+    type: object
+    properties:
+      searchId:
+        type: string
+        description: search uniq id
+      prices:
+        type: array 
+        items:
+          type: object
+          properties:
+            checkinDate:
+              type: string
+              description: hotel checkin date
+            checkoutDate:
+              type: string
+              description: hotel checkout date
+            cities:
+              type: array 
+              items:
+                type: string
+            minPrice: 
+              type: array 
+              description: hotels array 
+              items:
+                type: object
+                properties:
+                  city:
+                    type: string
+                    description: city of the hotel location
+                  price:
+                    type: number
+                    description: hotel price in the current city
+schemes:
+ - https
+ - http

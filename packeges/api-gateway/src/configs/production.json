@@ -1,0 +1,9 @@
+{
+    "env": "production",
+    "dbConfig": {
+        "host": "news-mongo",
+        "database": "mongoose",
+        "port": 27017
+    },
+    "secretKey": "secretKey"
+}
