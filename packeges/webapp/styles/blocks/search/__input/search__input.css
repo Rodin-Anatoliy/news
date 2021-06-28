@@ -1,0 +1,57 @@
+.search__input {
+    outline: none;
+    background: #FFFFFF;
+    border: none;
+    box-sizing: border-box;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #1A1B22;
+    margin: 0;
+    width: calc(100% - 168px);
+}
+
+.search__input:focus::-moz-placeholder {
+    color: transparent;
+}
+.search__input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.search__input::-webkit-search-cancel-button { 
+    display: none;
+}
+
+.search__input::-webkit-input-placeholder {
+    color:#B6BCBF; 
+    opacity:1;
+}/* webkit */
+
+.search__input::-moz-placeholder {
+    color:#B6BCBF; 
+    opacity:1;
+}/* Firefox 19+ */
+
+.search__input:-moz-placeholder {
+    color:#B6BCBF;
+    opacity:1;
+}/* Firefox 18- */
+
+.search__input:-ms-input-placeholder {
+    color:#B6BCBF;
+    opacity:1;
+}/* IE */
+
+@media screen and (max-width: 451px) {
+    .search__input {
+        width: 100%;
+        background: #FFFFFF;
+        border: 1px solid #D1D2D6;
+        border-radius: 100px;
+        min-height: 56px;
+        margin-bottom: 16px;
+        padding-left: 16px;
+    }
+}

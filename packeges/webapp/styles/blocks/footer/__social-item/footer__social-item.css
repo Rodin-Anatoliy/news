@@ -1,0 +1,19 @@
+.footer__social-item {
+    list-style-type: none;
+    display: inline;
+    margin: 0 0 0 28px;
+    padding: 0;
+    transition: opacity linear .1s;
+}
+
+.footer__social-item:active {
+    opacity: 0.2;
+}
+
+.footer__social-item:hover {
+    opacity: 0.5;
+}
+
+.footer__social-item:first-child {
+    margin: 0;
+}

@@ -1,0 +1,21 @@
+.infographics__diagram-head-date {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: #B6BCBF;
+    max-width: 104px;
+    padding: 0 24px 0 0;
+    box-sizing: border-box;
+    margin: 0 0 8px 0;
+}
+
+@media screen and (max-width: 451px) {
+    .infographics__diagram-head-date {
+        max-width: 80px;
+        padding: 0;
+    }
+}

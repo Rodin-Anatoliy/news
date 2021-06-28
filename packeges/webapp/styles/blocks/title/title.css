@@ -1,0 +1,17 @@
+@import url(./_analytics/title_analytics.css);
+@import url(./_author/title_author.css);
+@import url(./_for-clients/title_for-clients.css);
+@import url(./_github/title_github.css);
+@import url(./_header/title_header.css);
+@import url(./_infographics/title_infographics.css);
+@import url(./_founds/title_founds.css);
+@import url(./_technologies/title_technologies.css);
+@import url(./_not-found/title_not-found.css);
+
+.title {
+    font-family: 'Roboto Slab', Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}

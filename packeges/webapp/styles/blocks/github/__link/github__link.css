@@ -1,0 +1,24 @@
+.github__link {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #1A1B22;
+    text-decoration: none;
+    transition: opacity linear .1s;
+}
+
+.github__link:hover {
+    opacity: 0.5;
+}
+
+.github__link:active {
+    opacity: 0.2;
+}
+
+@media screen and (max-width: 451px) {
+    .github__link {
+        display: none;
+    }
+}

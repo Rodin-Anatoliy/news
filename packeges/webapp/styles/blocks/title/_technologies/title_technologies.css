@@ -1,0 +1,13 @@
+.title_technologies {
+    font-size: 40px;
+    line-height: 46px;
+    max-width: 344px;
+}
+
+@media screen and (max-width: 1034px) {
+    .title_technologies {
+        font-size: 30px;
+        line-height: 34px;
+    }
+}
+

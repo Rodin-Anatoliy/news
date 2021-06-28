@@ -1,0 +1,9 @@
+@import url(./__head/founds__head.css);
+@import url(./__link/founds__link.css);
+
+.founds {
+    /*display: flex;*/
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+}

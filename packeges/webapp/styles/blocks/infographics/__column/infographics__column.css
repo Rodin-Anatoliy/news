@@ -1,0 +1,26 @@
+.infographics__column {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background: #2F71E5;
+    min-height: 24px;
+    margin: 0 0 56px 0;
+    padding-left: 6px;
+}
+
+.infographics__column:last-child {
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 451px) {
+    .infographics__column {
+        margin: 0 0 24px 0;
+    }
+}

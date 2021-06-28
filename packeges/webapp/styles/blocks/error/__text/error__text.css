@@ -1,0 +1,10 @@
+.error__text {
+    font-family: 'Roboto Slab', Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 40px;
+    margin: 0;
+    padding: 10px;
+    max-width: 608px;
+}

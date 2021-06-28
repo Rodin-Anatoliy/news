@@ -1,0 +1,6 @@
+@import url(./__text/error__text.css);
+
+.error {
+    display: none;
+    justify-content: center;
+}

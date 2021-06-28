@@ -1,0 +1,28 @@
+.news-cards {
+    display: flex;
+    
+    flex-wrap: wrap;
+}
+
+/* .news-cards {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 16px;
+    width: 100%;
+}
+
+@media screen and (max-width: 769px) {
+    .news-cards {
+        grid-gap: 8px;
+        grid-template-rows: 1fr;
+    }
+}
+*/
+
+@media screen and (max-width: 536px) {
+    .news-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}

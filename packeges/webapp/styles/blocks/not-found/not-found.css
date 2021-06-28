@@ -1,0 +1,10 @@
+@import url(./__image/not-found__image.css);
+@import url(./__info-block/not-found__info-block.css);
+@import url(./__text/not-found__text.css);
+
+.not-found {
+    /*display: flex;*/
+    align-items: center;
+    flex-direction: column;
+    display: none;
+}

@@ -1,0 +1,13 @@
+@import url(./_bold/analytics__numbers-item_bold.css);
+
+.analytics__numbers-item {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #1A1B22;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}

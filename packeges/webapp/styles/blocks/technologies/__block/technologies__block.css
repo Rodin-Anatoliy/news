@@ -1,0 +1,21 @@
+.technologies__block {
+    margin-left: 41px;
+}
+
+.technologies__block:first-child {
+    margin-left: 0;
+}
+
+@media screen and (max-width: 1034px) {
+    .technologies__block {
+        margin: auto;
+        justify-content: space-between;
+    }
+    .technologies__block:first-child {
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width: 550px) {
+
+}

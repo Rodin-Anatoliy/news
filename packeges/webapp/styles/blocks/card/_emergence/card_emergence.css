@@ -1,0 +1,19 @@
+.card_emergence {
+    transition: cardView;
+    opacity: 0;
+    transform: translate3d(0px, -100%, 0px);
+    animation-duration: 0.55s;  
+    animation-fill-mode: both;
+    animation-name: cardView;
+}
+
+@keyframes cardView { 
+    0% {               
+        opacity: 0;
+        transform: translate3d(0px, -100%, 0px);
+    }
+    100% {             
+        opacity: 1;
+        transform: none;
+    }
+}

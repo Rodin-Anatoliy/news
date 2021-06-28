@@ -1,0 +1,15 @@
+.author__description {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #1A1B22;
+    margin: 24px 0 0 0;
+}
+
+@media screen and (max-width: 769px) {
+    .author__description {
+        margin: 16px 0 0 0;
+    }
+}

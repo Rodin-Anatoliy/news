@@ -1,0 +1,28 @@
+.author__photo {
+    object-fit: cover;
+    object-position: center;
+    border-radius: 1000px;
+    width: 37.6623376%;
+    overflow: hidden;
+    min-width: 200px;
+    min-height: 200px;
+    max-width: 464px;
+    max-height: 464px;
+
+}
+
+@media screen and (max-width: 769px) {
+    .author__photo {
+        width: 33.7209302%;
+        height: 33.7209302%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .author__photo {
+        width: 100%;
+        height: 100%;
+        max-width: 272px;
+        max-height: 272px;
+    }
+}

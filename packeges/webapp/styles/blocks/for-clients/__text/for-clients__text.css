@@ -1,0 +1,10 @@
+.for-clients__text {
+    max-width: 815px;
+    margin-top: 24px;
+}
+
+@media screen and (max-width: 769px) {
+    .for-clients__text {
+        margin-top: 16px;
+    }
+}

@@ -1,0 +1,10 @@
+.analytics__numbers {
+    margin: 24px 0 0 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 451px) {
+    .analytics__numbers {
+        margin: 16px 0 0 0;
+    }
+}

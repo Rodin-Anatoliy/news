@@ -1,0 +1,15 @@
+.root__section {
+    padding: 0 104px;
+}
+
+@media screen and (max-width: 1034px) {
+    .root__section {
+      padding: 0 40px;
+    }
+}
+
+@media screen and (max-width: 451px) {
+  .root__section {
+    padding: 0 16px;
+  }
+}

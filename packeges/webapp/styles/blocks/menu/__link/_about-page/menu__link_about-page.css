@@ -1,0 +1,7 @@
+.menu__link_about-page {
+    color: #1A1B22;
+}
+
+.menu__link_main-page :hover {
+    color: #FFF;
+}

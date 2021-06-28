@@ -1,0 +1,11 @@
+@import url(./__item/menu__item.css);
+@import url(./__link/menu__link.css);
+@import url(./__list/menu__list.css);
+@import url(./_light/menu_light.css);
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}

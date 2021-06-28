@@ -1,0 +1,32 @@
+.button_show-more {
+    background: #FFF;
+    border-radius: 80px;
+    padding: 18px 80px 22px 80px;
+    color: #1A1B22;
+    max-width: 288px;
+    width: 100%;
+    border: none;
+    margin: 64px auto 0 auto;
+    transform: background linear 1s;
+    box-shadow: 0 10px 10px 0px rgba(221, 221, 221, 1);
+}
+
+.button_show-more:active {
+    opacity: 0.5;
+}
+
+.button_show-more:hover {
+    background: #e8e8e9;
+}
+
+@media screen and (max-width: 769px) {
+    .button_show-more {
+        margin: 22px auto 0 auto;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .button_show-more {
+        margin-top: 12.87px;
+    }
+}

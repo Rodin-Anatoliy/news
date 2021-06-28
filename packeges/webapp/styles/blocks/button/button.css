@@ -1,0 +1,20 @@
+@import url(./_search/button_search.css);
+@import url(./_show-more/button_show-more.css);
+@import url(./_github/button_github.css);
+
+.button {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    transition: background linear .1s;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.button:focus {
+    outline: none;
+}

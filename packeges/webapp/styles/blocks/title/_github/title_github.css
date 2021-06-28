@@ -1,0 +1,19 @@
+.title_github {
+    font-size: 40px;
+    line-height: 46px;
+    color: #1A1B22;
+}
+
+@media screen and (max-width: 1034px) {
+    .title_github {
+        font-size: 30px;
+        line-height: 34px;
+        max-width: 336px;
+    }
+}
+
+@media screen and (max-width: 451px) {
+    .title_github {
+        max-width: 200px;
+    }
+}

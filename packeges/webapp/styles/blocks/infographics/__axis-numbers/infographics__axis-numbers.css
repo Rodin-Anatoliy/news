@@ -1,0 +1,17 @@
+.infographics__axis-numbers {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: #B6BCBF;
+    width: calc((100% - 104px) / 4);
+    text-align: end;
+}
+
+.infographics__axis-numbers:first-child {
+    min-width: 112px;
+    width: 5%;
+}

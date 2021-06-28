@@ -1,0 +1,21 @@
+.founds__head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 64px;
+}
+
+@media screen and (max-width: 769px) {
+    .founds__head {
+        padding-bottom: 32px;
+    }
+}
+
+@media screen and (max-width: 451px) {
+    .founds__head {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 36.86px;
+    }
+}

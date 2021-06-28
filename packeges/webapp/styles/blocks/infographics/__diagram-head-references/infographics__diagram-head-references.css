@@ -1,0 +1,18 @@
+.infographics__diagram-head-references {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: #B6BCBF;
+    width: calc(100% - 104px);
+    margin: 0;
+}
+
+@media screen and (max-width: 451px) {
+    .infographics__diagram-head-references {
+        width: calc(100% - 80px);
+    }
+}

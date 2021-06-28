@@ -1,0 +1,27 @@
+.footer__link {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #1A1B22;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    transition: color linear .1s;
+}
+
+.footer__link:active {
+    opacity: 0.5;
+}
+
+.footer__link:hover {
+    color: #B6BCBF;
+}
+
+@media screen and (max-width: 706px) {
+    .footer__link {
+        line-height: 48px;
+    }
+}

@@ -1,0 +1,11 @@
+.infographics__diagram {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 451px) {
+    .infographics__diagram {
+        margin-top: 16px;
+    }
+}

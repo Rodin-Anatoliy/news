@@ -1,0 +1,35 @@
+.footer__menu-list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+
+@media screen and (max-width: 769px) {
+    .footer__menu-list{
+        margin-right: 68.77px;
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .footer__menu-list {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 706px) {
+    .footer__menu-list {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 451px) {
+    .footer__menu-list {
+        margin: 17px 0 19px 0;
+        flex-direction: column;
+    }
+}

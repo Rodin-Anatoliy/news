@@ -1,6 +1,4 @@
 // pages/_app.js
-import 'antd/dist/antd.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/globals.css';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Hydrate } from 'react-query/hydration';

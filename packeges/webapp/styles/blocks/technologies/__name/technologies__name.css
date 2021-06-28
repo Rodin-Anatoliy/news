@@ -1,0 +1,15 @@
+.technologies__name {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #1A1B22;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.technologies__name:first-child {
+    margin: 0;
+}

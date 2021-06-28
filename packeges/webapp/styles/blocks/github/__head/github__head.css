@@ -1,0 +1,21 @@
+.github__head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 0 64px 0;
+    padding: 0 104px;
+}
+
+@media screen and (max-width: 768px) {
+    .github__head {
+        padding: 0 40px;
+        margin: 0 0 32px 0;
+    }
+}
+
+@media screen and (max-width: 451px) {
+    .github__head {
+        padding: 0 16px;
+        margin: 0 0 16px 0;
+    }
+}

@@ -1,0 +1,24 @@
+@import url(./__head/github__head.css);
+@import url(./__link/github__link.css);
+@import url(./__commits-bar/github__commits-bar.css);
+
+.github {
+    background: #F5F6F7;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding-top: 72px;
+    padding-bottom: 80px;
+}
+
+@media screen and (max-width: 768px) {
+    .github {
+        padding: 40px 0;
+    }
+}
+
+@media screen and (max-width: 451px) {
+    .github {
+        padding: 32px 0;
+    }
+}

@@ -1,0 +1,12 @@
+@import url(./_main/header_main.css);
+@import url(./_light/header_light.css);
+@import url(./__subtitle/header__subtitle.css);
+@import url(./__search/header__search.css);
+
+.header {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}

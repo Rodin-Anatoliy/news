@@ -1,0 +1,5 @@
+.infographics__diagram-head {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #1A1B22;
+}

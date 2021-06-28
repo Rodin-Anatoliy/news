@@ -1,0 +1,26 @@
+@import url(./__site-page/analytics__site-page.css);
+@import url(./__link/analytics__link.css);
+@import url(./__site-page/_grey/analytics__site-page_grey.css);
+@import url(./__nubmers/analytics__numbers.css);
+@import url(./__numbers-item/analytics__numbers-item.css);
+@import url(./__numbers-item/_bold/analytics__numbers-item_bold.css);
+
+
+.analytics {
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+@media screen and (max-width: 769px) {
+    .analytics {
+        padding-top: 32px;
+        padding-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 451px) {
+    .analytics {
+        padding-top: 16px;
+        padding-bottom: 24px;
+    }
+}

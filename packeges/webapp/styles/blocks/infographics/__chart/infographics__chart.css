@@ -1,0 +1,4 @@
+.infographics__chart {
+    display: flex;
+    flex-direction: row;
+}

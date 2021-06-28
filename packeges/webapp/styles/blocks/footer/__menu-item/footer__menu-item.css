@@ -1,0 +1,25 @@
+.footer__menu-item {
+    list-style-type: none;
+    display: inline;
+    margin: 0 40px 0 0;
+    padding: 0;
+}
+
+.footer__menu-item:last-child {
+    margin: 0;
+}
+
+@media screen and (max-width: 769px) {
+    .footer__menu-item {
+        margin: 0 25.12px 0 0;
+    }
+}
+
+@media screen and (max-width: 706px) {
+    .footer__menu-item {
+        margin: 0 0 0 0;
+    }
+    .footer__menu-item:last-child {
+        margin: 0;
+    }
+}

@@ -1,0 +1,11 @@
+.infographics__chart-dates {
+    min-width: 104px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 451px) {
+    .infographics__chart-dates {
+        min-width: 80px;
+    }
+}

@@ -1,0 +1,13 @@
+.title_header {
+    font-size: 60px;
+    line-height: 64px;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 769px) {
+    .title_header {
+        font-size: 36px;
+        line-height: 40px;
+        max-width: 385px;
+    }
+}

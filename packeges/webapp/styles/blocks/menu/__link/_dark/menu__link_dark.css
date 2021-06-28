@@ -1,0 +1,7 @@
+.menu__link_dark:hover {
+    color: #FFF;
+}
+
+.menu__link_dark:active {
+    color: #B6BCBF;
+}

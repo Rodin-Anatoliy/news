@@ -1,0 +1,7 @@
+@media screen and (max-width: 706px) {
+    .footer__menu {
+        grid-row: 1;
+        grid-column: 1 / 3;
+        justify-self: stretch;  
+    }
+}

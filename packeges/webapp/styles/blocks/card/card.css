@@ -1,0 +1,61 @@
+@import url(./__date/card__date.css);
+@import url(./__description/card__description.css);
+@import url(./__image/card__image.css);
+@import url(./__news-info/cars__news-info.css);
+@import url(./__source/card__source.css);
+@import url(./__title/card__title.css);
+@import url(./_emergence/card_emergence.css);
+@import url(./__wrapper/card__wrapper.css);
+
+.card {
+    background: #FFF;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    min-width: 224px;
+    width: calc((100% - 32px) / 3);
+    margin-top: 16px;
+    height: 500px;
+    margin-right: 16px;
+    text-decoration: none;
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+}
+
+.card:nth-child(1), .card:nth-child(2), .card:nth-child(3) {
+    margin-top: 0;
+}
+
+.card:nth-child(3n) {
+
+    margin-right: 0;
+}
+
+@media screen and (max-width: 1034px) {
+    .card {
+        width: calc((100% - 16px) / 3);
+        margin-top: 0px;
+        margin-bottom: 8px;
+        margin-right: 8px;
+    }
+
+}
+
+@media screen and (max-width: 817px) {
+    .card {
+        width: calc((100% - 8px) / 2);
+        margin-right: 8px;
+    }
+    .card:nth-child(3n) {
+        margin-right: 8px;
+    }
+    .card:nth-child(2n) {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 536px) {
+    .card {
+        width: 100%;
+    }
+}

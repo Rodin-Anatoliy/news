@@ -1,0 +1,21 @@
+.button_githab {
+    border: 1px solid #1A1B22;
+    box-sizing: border-box;
+    border-radius: 80px;
+    display: none;
+
+    color: #1A1B22;
+}
+
+@media screen and (max-width: 451px) {
+    .button_githab {
+        display: block;
+        padding: 15px 0 17px 0;
+        width: calc(100% - 32px);
+        max-width: 288px;
+        margin: 24px auto 0 auto;
+        text-decoration: none;
+        color: #1A1B22;
+        text-align: center;
+    }
+}

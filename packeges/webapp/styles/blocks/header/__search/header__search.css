@@ -1,0 +1,24 @@
+.header__search {
+    display: flex;
+    flex-direction: column;
+    padding: 80px calc(50% - 304px);
+}
+
+@media screen and (max-width: 769px) {
+    .header__search {
+        padding: 40px calc(50% - 224px) 48px;
+    }
+}
+
+@media screen and (max-width: 528px) {
+    .header__search {
+        padding: 40px 40px 48px;
+    }
+}
+
+@media screen and (max-width: 451px) {
+    .header__search {
+        padding: 30px 16px 32px;
+    }
+}
+
