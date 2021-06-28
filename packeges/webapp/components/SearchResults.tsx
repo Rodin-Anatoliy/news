@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
 import { INewsArticle, INewsSearchResultsRes } from '../Api';
 import { UseMutationResult } from 'react-query';
@@ -11,22 +11,12 @@ interface Props {
 }
 
 const SearchResults: FC<Props> = ({ newsQueryMutation, newsSearchResults }) => {
-  const article = {
-    source: {
-      id: 'string',
-      name: 'string',
-    },
-    author: '',
-    title: '',
-    description: '',
-    url: '',
-    urlToImage: '',
-    publishedAt: '',
-    content: '',
+  const [articlesDisplayed, setArticlesDisplayed] = useState<number>(3);
+  const handlePressShowMore = () => {
+    setArticlesDisplayed(articlesDisplayed + 3);
   };
   return (
     <>
-      {/* <NewsCard articleData={article} /> */}
       <section className="results root__section">
         {newsQueryMutation.isSuccess && !newsSearchResults?.articles?.length && (
           <div className="not-found">
@@ -73,11 +63,20 @@ const SearchResults: FC<Props> = ({ newsQueryMutation, newsSearchResults }) => {
               </a>
             </div>
             <div className="news-cards">
-              {newsSearchResults?.articles.map((article, index) => (
-                <NewsCard articleData={article} key={index} />
-              ))}
+              {newsSearchResults?.articles
+                .slice(0, articlesDisplayed)
+                .map((article, index) => (
+                  <NewsCard articleData={article} key={index} />
+                ))}
             </div>
-            <button className="button button_show-more">Показать еще</button>
+            {articlesDisplayed < newsSearchResults?.articles?.length && (
+              <button
+                onClick={handlePressShowMore}
+                className="button button_show-more"
+              >
+                Показать еще
+              </button>
+            )}
           </div>
         )}
       </section>
