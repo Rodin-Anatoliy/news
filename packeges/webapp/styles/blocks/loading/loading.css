@@ -2,9 +2,8 @@
 @import url(./__text/loading__text.css);
 
 .loading {
-    /*display: flex;*/
+    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    display: none;
 }

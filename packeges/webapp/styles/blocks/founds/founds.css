@@ -2,8 +2,7 @@
 @import url(./__link/founds__link.css);
 
 .founds {
-    /*display: flex;*/
-    display: none;
+    display: flex;
     justify-content: center;
     flex-direction: column;
 }

@@ -3,8 +3,7 @@
 @import url(./__text/not-found__text.css);
 
 .not-found {
-    /*display: flex;*/
+    display: flex;
     align-items: center;
     flex-direction: column;
-    display: none;
 }

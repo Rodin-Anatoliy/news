@@ -50,28 +50,28 @@ export interface ApiConfig<SecurityDataType = unknown> {
 export interface INewsSearchResults {
   query: string;
   createdAt: string;
-  articles: INewsArticles[];
+  articles: INewsArticle[];
 }
 
-interface INewsArticles {
-  source: INewsArticlesSource;
-  author: string;
-  title: string;
-  description: string;
-  url: string;
-  urlToImage: string;
-  publishedAt: string;
-  content: string;
+export interface INewsArticle {
+  source?: INewsArticleSource;
+  author?: string;
+  title?: string;
+  description?: string;
+  url?: string;
+  urlToImage?: string;
+  publishedAt?: string;
+  content?: string;
 }
 
-interface INewsArticlesSource {
-  id: string;
-  name: string;
+interface INewsArticleSource {
+  id?: any;
+  name?: string;
 }
 
 export interface INewsSearchResultsRes {
   id: string;
-  articles: INewsArticles[];
+  articles: INewsArticle[];
 }
 
 export interface HttpResponse<D extends unknown, E extends unknown = unknown>

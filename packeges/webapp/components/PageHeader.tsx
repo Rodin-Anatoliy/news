@@ -6,9 +6,18 @@ import Link from 'next/link';
 interface Props {
   theme: string;
   selectedPage: string;
+  handleFormSubmit?: (event: React.FormEvent<HTMLFormElement>) => void;
+  handleSearchInput?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  newsQuery?: string;
 }
 
-const PageHeader: FC<Props> = ({ theme, selectedPage }) => {
+const PageHeader: FC<Props> = ({
+  theme,
+  selectedPage,
+  handleFormSubmit,
+  newsQuery,
+  handleSearchInput,
+}) => {
   return (
     <>
       <header
@@ -61,11 +70,13 @@ const PageHeader: FC<Props> = ({ theme, selectedPage }) => {
               Введите в поиске любую тему и узнайте, насколько популярной она
               была в новостях за прошедшую неделю.
             </p>
-            <form className="search">
+            <form className="search" onSubmit={handleFormSubmit}>
               <input
                 className="search__input"
                 type="search"
                 placeholder="Введите тему новости"
+                value={newsQuery}
+                onChange={handleSearchInput}
               />
               <button className="button button_search" type="submit">
                 Искать

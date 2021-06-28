@@ -36,7 +36,7 @@ export class NewsService {
         articles: results.data.articles,
       });
       return {
-        results: results.data.articles,
+        articles: results.data.articles,
         id: newsSearchResults.id,
       };
     } catch (error) {

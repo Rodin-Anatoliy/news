@@ -1,11 +1,11 @@
 export interface INewsSearchResults {
   query: string;
   createdAt: string;
-  articles: INewsArticles[];
+  articles: INewsArticle[];
 }
 
-interface INewsArticles {
-  source: INewsArticlesSource;
+interface INewsArticle {
+  source: INewsArticleSource;
   author: string;
   title: string;
   description: string;
@@ -15,12 +15,12 @@ interface INewsArticles {
   content: string;
 }
 
-interface INewsArticlesSource {
+interface INewsArticleSource {
   id: string;
   name: string;
 }
 
 export interface INewsSearchResultsRes {
   id: string;
-  articles: INewsArticles[];
+  articles: INewsArticle[];
 }

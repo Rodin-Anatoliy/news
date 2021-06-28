@@ -7,7 +7,6 @@ interface Props {}
 const Author: FC<Props> = () => {
   return (
     <>
-      {/* Секция о авторе */}
       <section className="author root__section">
         <div className="author__photo">
           <Image
