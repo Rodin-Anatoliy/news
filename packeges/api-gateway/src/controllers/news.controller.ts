@@ -16,4 +16,18 @@ export class NewsController {
       next(error);
     }
   };
+
+  public getNewsById = async (
+    req: Request,
+    res: Response,
+    next: NextFunction,
+  ) => {
+    const { searchId } = req.query as any;
+    try {
+      const result = await this.newsService.findById(searchId);
+      res.status(200).json(result);
+    } catch (error) {
+      next(error);
+    }
+  };
 }

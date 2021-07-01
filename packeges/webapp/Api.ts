@@ -71,6 +71,8 @@ interface INewsArticleSource {
 
 export interface INewsSearchResultsRes {
   id: string;
+  query: string;
+  createdAt: string;
   articles: INewsArticle[];
 }
 
@@ -309,6 +311,20 @@ export class Api<
         type: ContentType.Json,
         ...params,
       }),
+    getById: (
+        query?: {
+          searchId: string;
+        },
+        params: RequestParams = {},
+      ) =>
+        this.request<INewsSearchResultsRes, any>({
+          path: `/news/get-by-id`,
+          method: 'GET',
+          query: query,
+          format: 'json',
+          type: ContentType.Json,
+          ...params,
+        }),
   
   };
 }

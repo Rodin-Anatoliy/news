@@ -17,10 +17,16 @@ const cssIcon = '/../public/assets/css.svg';
 const webpackIcon = '/../public/assets/Webpack.svg';
 const jsIcon = '/../public/assets/js.svg';
 
-export default function About() {
+export default function About({
+  newsSearchResults,
+  saveNewsSearchResults,
+}: {
+  newsSearchResults: INewsSearchResultsRes;
+  saveNewsSearchResults: (newsSearchResults: INewsSearchResultsRes) => void;
+}) {
   const api = useApi();
   const router = useRouter();
-
+  console.log(newsSearchResults);
   return (
     <>
       <Head>

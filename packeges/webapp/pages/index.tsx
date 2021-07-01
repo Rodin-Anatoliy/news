@@ -13,31 +13,65 @@ import Author from '../components/Author';
 import PageFooter from '../components/PageFooter';
 import SearchResults from '../components/SearchResults';
 
-export default function Index() {
+export default function Index({
+  newsSearchResults,
+  saveNewsSearchResults,
+}: {
+  newsSearchResults: INewsSearchResultsRes;
+  saveNewsSearchResults: (newsSearchResults: INewsSearchResultsRes) => void;
+}) {
   const api = useApi();
   const router = useRouter();
   const queryClient = useQueryClient();
+  const { searchId } = router.query as any;
+
+  // const prefetchedData = queryClient.getQueryState<INewsSearchResultsRes>([
+  //   'cachedNewsSearch',
+  //   searchId,
+  // ]);
+  // const prefetchedNewsSearchResults = prefetchedData?.data
+  //   ? prefetchedData.data
+  //   : null;
   const newsQueryMutation = useMutation((query: string) => {
     return api.news.get({ query: query });
   });
-  const [newsQuery, setNewsQuery] = useState<string>('');
+  const [newsQuery, setNewsQuery] = useState<string>(
+    newsSearchResults ? newsSearchResults.query : '',
+  );
   const handleSearchInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNewsQuery(event.target.value);
   };
-  const [
-    newsSearchResults,
-    setNewsSearchResults,
-  ] = useState<INewsSearchResultsRes>({
-    id: '',
-    articles: [],
-  });
   const handleSubmitSearchNews = async (
     event: React.FormEvent<HTMLFormElement>,
   ) => {
     event.preventDefault();
     const res = await newsQueryMutation.mutateAsync(newsQuery);
-    setNewsSearchResults(res?.data);
+    router.push(
+      {
+        pathname: '',
+        query: {
+          searchId: res.data.id,
+        },
+      },
+      '',
+      { shallow: true },
+    );
+    saveNewsSearchResults(res?.data);
   };
+  useEffect(() => {
+    if (newsSearchResults) {
+      router.push(
+        {
+          pathname: '',
+          query: {
+            searchId: newsSearchResults.id,
+          },
+        },
+        '',
+        { shallow: true },
+      );
+    }
+  }, []);
   return (
     <>
       <Head>
@@ -55,7 +89,8 @@ export default function Index() {
       <main className="content">
         {(newsQueryMutation.isSuccess ||
           newsQueryMutation.isLoading ||
-          newsQueryMutation.isError) && (
+          newsQueryMutation.isError ||
+          newsSearchResults) && (
           <SearchResults
             newsQueryMutation={newsQueryMutation}
             newsSearchResults={newsSearchResults}
@@ -67,4 +102,26 @@ export default function Index() {
       <PageFooter />
     </>
   );
+}
+
+export async function getServerSideProps({ query: { searchId } }) {
+  const queryClient = new QueryClient();
+  const apiUrl =
+    typeof window === 'undefined' && process.env.NODE_ENV === 'production'
+      ? 'http://news-api:3002'
+      : 'http://localhost:3002';
+  const api = new Api<string>({
+    baseUrl: apiUrl,
+  });
+  await queryClient.prefetchQuery(['cachedNewsSearch', searchId], async () => {
+    const res = await api.news.getById({
+      searchId,
+    });
+    return res.data;
+  });
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
 }

@@ -18,7 +18,7 @@ const SearchResults: FC<Props> = ({ newsQueryMutation, newsSearchResults }) => {
   return (
     <>
       <section className="results root__section">
-        {newsQueryMutation.isSuccess && !newsSearchResults?.articles?.length && (
+        {!newsSearchResults?.articles?.length && (
           <div className="not-found">
             <Image
               className="not-found__image"
@@ -54,7 +54,7 @@ const SearchResults: FC<Props> = ({ newsQueryMutation, newsSearchResults }) => {
           </div>
         )}
 
-        {newsQueryMutation.isSuccess && newsSearchResults?.articles?.length && (
+        {newsSearchResults?.articles?.length && (
           <div className="founds">
             <div className="founds__head">
               <h3 className="title title_founds">Результаты поиска</h3>

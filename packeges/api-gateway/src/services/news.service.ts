@@ -19,8 +19,15 @@ export class NewsService {
     return await newsSearchResultsModel.create(newsSearchResults);
   }
 
-  private async findById(id: string) {
-    return await this.newsSearchResultsModel.findById(id);
+  public async findById(id: string) {
+    try {
+      return await this.newsSearchResultsModel.findById(id);
+    } catch (error) {
+      throw new HttpException(
+        500,
+        `${error.response.data.message} (error proxied)`,
+      );
+    }
   }
 
   public async get({ query }: { query: string }) {
@@ -30,14 +37,16 @@ export class NewsService {
       const results = await this.httpService.get<any>(
         `https://newsapi.org/v2/everything?language=ru&q=${query}&from=${dateFrom}&to=${dateTo}&sortBy=publishedAt&pageSize=100&apiKey=${this.key}`,
       );
-      const newsSearchResults = await this.persist({
+      const res = await this.persist({
         query: query,
         createdAt: `${moment.utc().format()}`,
         articles: results.data.articles,
       });
       return {
+        query: query,
+        createdAt: `${moment.utc().format()}`,
         articles: results.data.articles,
-        id: newsSearchResults.id,
+        id: res.id,
       };
     } catch (error) {
       throw new HttpException(

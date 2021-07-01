@@ -22,5 +22,7 @@ interface INewsArticleSource {
 
 export interface INewsSearchResultsRes {
   id: string;
+  query: string;
+  createdAt: string;
   articles: INewsArticle[];
 }
