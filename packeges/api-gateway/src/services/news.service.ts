@@ -2,7 +2,10 @@ import axios from 'axios';
 import moment from 'moment';
 import HttpException from '@exceptions/HttpException';
 import newsSearchResultsModel from '@models/news-search-results.model';
-import { INewsSearchResults } from '@interfaces/newsSearchResults.interface';
+import {
+  INewsSearchResults,
+  INewsSearchResultsRes,
+} from '@interfaces/newsSearchResults.interface';
 
 export class NewsService {
   private key = '2356832b0876432c8814987efd07620a';
@@ -19,9 +22,15 @@ export class NewsService {
     return await newsSearchResultsModel.create(newsSearchResults);
   }
 
-  public async findById(id: string) {
+  public async findById(id: string): Promise<INewsSearchResultsRes> {
     try {
-      return await this.newsSearchResultsModel.findById(id);
+      const res = await this.newsSearchResultsModel.findById(id);
+      return {
+        query: res.query,
+        createdAt: res.createdAt,
+        articles: res.articles,
+        id: res.id,
+      };
     } catch (error) {
       throw new HttpException(
         500,
@@ -30,7 +39,11 @@ export class NewsService {
     }
   }
 
-  public async get({ query }: { query: string }) {
+  public async get({
+    query,
+  }: {
+    query: string;
+  }): Promise<INewsSearchResultsRes> {
     try {
       const dateTo = moment().format('YYYY-MM-DD');
       const dateFrom = moment().subtract(7, 'd').format('YYYY-MM-DD');

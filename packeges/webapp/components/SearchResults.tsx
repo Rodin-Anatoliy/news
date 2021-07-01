@@ -18,24 +18,26 @@ const SearchResults: FC<Props> = ({ newsQueryMutation, newsSearchResults }) => {
   return (
     <>
       <section className="results root__section">
-        {!newsSearchResults?.articles?.length && (
-          <div className="not-found">
-            <Image
-              className="not-found__image"
-              alt="not found"
-              src={notFoundPic}
-              layout="fixed"
-              width="100"
-              height="100"
-            />
-            <div className="not-found__info-block">
-              <h3 className="title title_not-found">Ничего не найдено</h3>
-              <p className="not-found__text">
-                К сожалению по вашему запросу ничего не найдено.
-              </p>
+        {!newsQueryMutation.isLoading &&
+          !newsQueryMutation.isError &&
+          !newsSearchResults?.articles?.length && (
+            <div className="not-found">
+              <Image
+                className="not-found__image"
+                alt="not found"
+                src={notFoundPic}
+                layout="fixed"
+                width="100"
+                height="100"
+              />
+              <div className="not-found__info-block">
+                <h3 className="title title_not-found">Ничего не найдено</h3>
+                <p className="not-found__text">
+                  К сожалению по вашему запросу ничего не найдено.
+                </p>
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
         {newsQueryMutation.isLoading && (
           <div className="loading">
@@ -44,41 +46,45 @@ const SearchResults: FC<Props> = ({ newsQueryMutation, newsSearchResults }) => {
           </div>
         )}
 
-        {newsQueryMutation.isError && (
+        {!newsQueryMutation.isLoading && newsQueryMutation.isError && (
           <div className="error">
+            <p className="error__text">Error</p>
             <p className="error__text">
-              Во время запроса произошла ошибка. Возможно, проблема с
+              {newsQueryMutation.error?.error?.message}
+              {/* Во время запроса произошла ошибка. Возможно, проблема с
               соединением или сервер недоступен. Подождите немного и попробуйте
-              ещё раз
+              ещё раз */}
             </p>
           </div>
         )}
 
-        {newsSearchResults?.articles?.length && (
-          <div className="founds">
-            <div className="founds__head">
-              <h3 className="title title_founds">Результаты поиска</h3>
-              <a className="founds__link" href="./analytics">
-                Посмотреть аналитику {`>`}
-              </a>
+        {!newsQueryMutation.isLoading &&
+          newsSearchResults?.articles?.length &&
+          !newsQueryMutation.isError && (
+            <div className="founds">
+              <div className="founds__head">
+                <h3 className="title title_founds">Результаты поиска</h3>
+                <a className="founds__link" href="./analytics">
+                  Посмотреть аналитику {`>`}
+                </a>
+              </div>
+              <div className="news-cards">
+                {newsSearchResults?.articles
+                  .slice(0, articlesDisplayed)
+                  .map((article, index) => (
+                    <NewsCard articleData={article} key={index} />
+                  ))}
+              </div>
+              {articlesDisplayed < newsSearchResults?.articles?.length && (
+                <button
+                  onClick={handlePressShowMore}
+                  className="button button_show-more"
+                >
+                  Показать еще
+                </button>
+              )}
             </div>
-            <div className="news-cards">
-              {newsSearchResults?.articles
-                .slice(0, articlesDisplayed)
-                .map((article, index) => (
-                  <NewsCard articleData={article} key={index} />
-                ))}
-            </div>
-            {articlesDisplayed < newsSearchResults?.articles?.length && (
-              <button
-                onClick={handlePressShowMore}
-                className="button button_show-more"
-              >
-                Показать еще
-              </button>
-            )}
-          </div>
-        )}
+          )}
       </section>
     </>
   );

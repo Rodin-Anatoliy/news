@@ -25,27 +25,29 @@ export default function Index({
   const queryClient = useQueryClient();
   const { searchId } = router.query as any;
 
-  // const prefetchedData = queryClient.getQueryState<INewsSearchResultsRes>([
-  //   'cachedNewsSearch',
-  //   searchId,
-  // ]);
-  // const prefetchedNewsSearchResults = prefetchedData?.data
-  //   ? prefetchedData.data
-  //   : null;
+  const prefetchedData = queryClient.getQueryState<INewsSearchResultsRes>([
+    'cachedNewsSearch',
+    searchId,
+  ]);
+  const prefetchedNewsSearchResults = prefetchedData?.data
+    ? prefetchedData.data
+    : null;
+
   const newsQueryMutation = useMutation((query: string) => {
     return api.news.get({ query: query });
   });
-  const [newsQuery, setNewsQuery] = useState<string>(
-    newsSearchResults ? newsSearchResults.query : '',
-  );
   const handleSearchInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setNewsQuery(event.target.value);
+    const changes = { ...newsSearchResults };
+    changes.query = event.target.value;
+    saveNewsSearchResults(changes);
   };
   const handleSubmitSearchNews = async (
     event: React.FormEvent<HTMLFormElement>,
   ) => {
     event.preventDefault();
-    const res = await newsQueryMutation.mutateAsync(newsQuery);
+    const res = await newsQueryMutation.mutateAsync(
+      newsSearchResults?.query ? newsSearchResults.query : '',
+    );
     router.push(
       {
         pathname: '',
@@ -72,6 +74,13 @@ export default function Index({
       );
     }
   }, []);
+
+  useEffect(() => {
+    if (prefetchedNewsSearchResults) {
+      saveNewsSearchResults(prefetchedNewsSearchResults);
+    }
+  }, []);
+
   return (
     <>
       <Head>
@@ -82,7 +91,7 @@ export default function Index({
       <PageHeader
         theme="dark"
         selectedPage="main"
-        newsQuery={newsQuery}
+        newsQuery={newsSearchResults?.query ? newsSearchResults.query : ''}
         handleFormSubmit={handleSubmitSearchNews}
         handleSearchInput={handleSearchInput}
       />

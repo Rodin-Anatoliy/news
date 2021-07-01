@@ -16,7 +16,7 @@
    
 }
 
-@media screen and (max-width: 1033px) {
+@media screen and (max-width: 1080px) {
     .card__description {
         max-height: 88px;
         margin: 0 0 12px 0;

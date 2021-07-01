@@ -10,8 +10,6 @@ import validateEnv from '@utils/validateEnv';
 import NewsRout from '@/routes/news.route';
 
 validateEnv();
-const app = new App([
-  new NewsRout(),
-]);
+const app = new App([new NewsRout()]);
 
 app.listen();

@@ -26,7 +26,6 @@ export default function About({
 }) {
   const api = useApi();
   const router = useRouter();
-  console.log(newsSearchResults);
   return (
     <>
       <Head>

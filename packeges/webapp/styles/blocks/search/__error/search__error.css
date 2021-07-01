@@ -12,8 +12,8 @@
     border-radius: 10px;
     opacity: 0;
     transform: translate3d(0px, -100%, 0px);
-    animation-duration: 0.55s;  /* Время работы анимации */
-    animation-fill-mode: both;  /* Поведение анимации */
+    animation-duration: 0.55s;
+    animation-fill-mode: both;  
     animation-name: fadeInDown;
     font-family: 'Roboto', Arial, sans-serif;
     font-style: normal;
@@ -21,12 +21,12 @@
     font-size: 16px;
 }
 
-@keyframes fadeInDown { /* Сама анимация */
-    0% {                /* Старт анимации */
+@keyframes fadeInDown { 
+    0% {               
         opacity: 0;
         transform: translate3d(0px, -100%, 0px);
     }
-    100% {              /* в финале анимации - финал это заданная 0.55s */
+    100% {
         opacity: 1;
         transform: none;
     }
