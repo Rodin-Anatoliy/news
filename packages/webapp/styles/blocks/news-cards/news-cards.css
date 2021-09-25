@@ -7,7 +7,6 @@
 .news-cards {
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-template-rows: 1fr 1fr;
     grid-gap: 16px;;
     max-width: fit-content;
 }
@@ -23,7 +22,6 @@
     .news-cards {
         grid-gap: 8px;
         grid-template-columns: auto;
-        grid-template-rows: 1fr;
     }
 }
 

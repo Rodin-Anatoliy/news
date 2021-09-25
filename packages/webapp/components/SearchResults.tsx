@@ -50,10 +50,9 @@ const SearchResults: FC<Props> = ({ newsQueryMutation, newsSearchResults }) => {
           <div className="error">
             <p className="error__text">Error</p>
             <p className="error__text">
-              {newsQueryMutation.error?.error?.message}
-              {/* Во время запроса произошла ошибка. Возможно, проблема с
+              Во время запроса произошла ошибка. Возможно, проблема с
               соединением или сервер недоступен. Подождите немного и попробуйте
-              ещё раз */}
+              ещё раз
             </p>
           </div>
         )}
